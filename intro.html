@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Intro</title>
-<style>
-body {
-    margin: 0;
-    background: black;
-    overflow: hidden;
-}
+    <meta charset="UTF-8">
+    <title>Intro</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+        }
 
-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-}
+        video {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.fade-out {
-    animation: fadeOut 1.2s forwards;
-}
+        .fade-out {
+            animation: fadeOut 1.2s forwards;
+        }
 
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-</style>
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to   { opacity: 0; }
+        }
+    </style>
 </head>
 
 <body>
 
-<video id="introVideo" autoplay>
-    <source src="video/intro.mp4" type="video/mp4">
-</video>
+    <video id="introVideo" autoplay muted playsinline>
+        <source src="video/intro.mp4" type="video/mp4">
+    </video>
 
-<script>
-const video = document.getElementById("introVideo");
+    <script>
+        const video = document.getElementById("introVideo");
 
-video.onended = () => {
-    video.classList.add("fade-out");
+        // Khi video chạy xong → fade và chuyển sang index.html
+        video.onended = () => {
+            video.classList.add("fade-out");
 
-    setTimeout(() => {
-        window.location.href = "index.html";
-    }, 1200);
-};
-</script>
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1200);
+        };
+    </script>
 
 </body>
 </html>
