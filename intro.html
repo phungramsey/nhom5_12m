@@ -32,29 +32,60 @@
         .fade.active {
             opacity: 1;
         }
+
+        /* Nút bật tiếng khi bị chặn (dự phòng) */
+        .sound-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 18px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 10000;
+            display: none;
+        }
     </style>
 </head>
 
 <body>
 
-    <video id="introVideo" autoplay muted>
-        <source src="video/intro.mp4" type="video/mp4">
-    </video>
+<video id="introVideo" autoplay playsinline>
+    <source src="video/intro.mp4" type="video/mp4">
+</video>
 
-    <div class="fade" id="fade"></div>
+<div class="fade" id="fade"></div>
+<div class="sound-btn" id="soundBtn">🔊 Bật tiếng</div>
 
-    <script>
-        const video = document.getElementById("introVideo");
-        const fade = document.getElementById("fade");
+<script>
+    const video = document.getElementById("introVideo");
+    const fade = document.getElementById("fade");
+    const soundBtn = document.getElementById("soundBtn");
 
-        video.onended = () => {
-            fade.classList.add("active");
+    // Thử phát có tiếng ngay lập tức
+    video.muted = false;
+    video.play().catch(() => {
+        // Nếu trình duyệt chặn → hiện nút bật tiếng
+        soundBtn.style.display = "block";
+    });
 
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, 1200);
-        };
-    </script>
+    // Khi người dùng bấm bật tiếng
+    soundBtn.onclick = () => {
+        video.muted = false;
+        video.play();
+        soundBtn.style.display = "none";
+    };
+
+    // Hết video → fade → vào trang chính
+    video.onended = () => {
+        fade.classList.add("active");
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1200);
+    };
+</script>
 
 </body>
 </html>
