@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    
+    <meta charset="UTF-8">
+    <title>Giới thiệu thành viên nhóm</title>
+
+    <!-- ✅ CHẶN VÀO THẲNG INDEX -->
+    <script>
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 
     <style>
         body {
