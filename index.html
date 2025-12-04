@@ -1,10 +1,17 @@
-<html>
- <head>  
- </head> 
- <body> 
-  <meta charset="UTF-8"> 
-  <title>Giới thiệu thành viên nhóm</title> 
-  <style>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giới thiệu thành viên nhóm</title>
+
+    <!-- ✅ BẮT BUỘC ĐI ĐÚNG TRÌNH TỰ -->
+    <script>
+        if (!sessionStorage.getItem("daDangNhap")) {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <style>
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
@@ -78,7 +85,6 @@
             color: #1976d2;
         }
 
-        /* CARD THỨ 10 RA GIỮA */
         .member:nth-child(10) {
             grid-column: 2 / 3;
         }
@@ -92,7 +98,6 @@
             font-size: 14px;
         }
 
-        /* ======= HIỆU ỨNG ZOOM ======= */
         .overlay {
             position: fixed;
             top: 0;
@@ -141,7 +146,6 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .container {
                 grid-template-columns: repeat(2, 1fr);
@@ -157,106 +161,35 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style> 
-  <h1>GIỚI THIỆU THÀNH VIÊN NHÓM 4 LỚP 12M</h1> 
-  <div class="container"> 
-   <div class="member"> 
-    <img src="img/tv1.jpg"> 
-    <div class="info"> 
-     <h3>Đào Gia Bảo Ngọc</h3> 
-     <p>Trưởng nhóm</p> 
-     <p>Email: a@gmail.com</p> 
-     <p>SĐT: 0123 456 789</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv2.jpg"> 
-    <div class="info"> 
-     <h3>Buồi Mạnh Trường</h3> 
-     <p>Phó nhóm</p> 
-     <p>Email: b@gmail.com</p> 
-     <p>SĐT: 0987 654 321</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv3.jpg"> 
-    <div class="info"> 
-     <h3>Phan Thị Phương Thuỷ</h3> 
-     <p>Thiết kế</p> 
-     <p>Email: c@gmail.com</p> 
-     <p>SĐT: 0909 111 222</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv4.jpg"> 
-    <div class="info"> 
-     <h3>Nguyễn Kim Ngân</h3> 
-     <p>Nội dung</p> 
-     <p>Email: d@gmail.com</p> 
-     <p>SĐT: 0911 222 333</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv5.jpg"> 
-    <div class="info"> 
-     <h3>Trần Nam Phong</h3> 
-     <p>Kỹ thuật</p> 
-     <p>Email: e@gmail.com</p> 
-     <p>SĐT: 0933 444 555</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv6.jpg"> 
-    <div class="info"> 
-     <h3>Nguyễn Minh Trí</h3> 
-     <p>Hậu cần</p> 
-     <p>Email: f@gmail.com</p> 
-     <p>SĐT: 0966 777 888</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv7.jpg"> 
-    <div class="info"> 
-     <h3>Vũ Đức Việt</h3> 
-     <p>Quản lý</p> 
-     <p>Email: g@gmail.com</p> 
-     <p>SĐT: 0901 222 333</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv8.jpg"> 
-    <div class="info"> 
-     <h3>Đặng Kim Ngân</h3> 
-     <p>Truyền thông</p> 
-     <p>Email: h@gmail.com</p> 
-     <p>SĐT: 0910 333 444</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv9.jpg"> 
-    <div class="info"> 
-     <h3>Phùng Ngọc Tuấn Tú</h3> 
-     <p>Nhiếp ảnh</p> 
-     <p>Email: cattertu310308@gmail.com</p> 
-     <p>SĐT: 0865 831 308</p> 
-    </div> 
-   </div> 
-   <div class="member"> 
-    <img src="img/tv10.jpg"> 
-    <div class="info"> 
-     <h3>Đoàn Nguyễn Thuỳ Trang</h3> 
-     <p>Hỗ trợ</p> 
-     <p>Email: k@gmail.com</p> 
-     <p>SĐT: 0930 999 111</p> 
-    </div> 
-   </div> 
-  </div> 
-  <footer>
-    © 2025 - Ngoc Dao's Group | Thiết kế bởi @Catter 
-  </footer> 
-  <!-- OVERLAY ZOOM --> 
-  <div class="overlay" id="overlay"></div> 
-  <script>
+    </style>
+</head>
+
+<body>
+
+<h1>GIỚI THIỆU THÀNH VIÊN NHÓM 4 LỚP 12M</h1>
+
+<div class="container">
+
+    <div class="member"><img src="img/tv1.jpg"><div class="info"><h3>Đào Gia Bảo Ngọc</h3><p>Trưởng nhóm</p><p>Email: a@gmail.com</p><p>SĐT: 0123 456 789</p></div></div>
+    <div class="member"><img src="img/tv2.jpg"><div class="info"><h3>Buồi Mạnh Trường</h3><p>Phó nhóm</p><p>Email: b@gmail.com</p><p>SĐT: 0987 654 321</p></div></div>
+    <div class="member"><img src="img/tv3.jpg"><div class="info"><h3>Phan Thị Phương Thuỷ</h3><p>Thiết kế</p><p>Email: c@gmail.com</p><p>SĐT: 0909 111 222</p></div></div>
+    <div class="member"><img src="img/tv4.jpg"><div class="info"><h3>Nguyễn Kim Ngân</h3><p>Nội dung</p><p>Email: d@gmail.com</p><p>SĐT: 0911 222 333</p></div></div>
+    <div class="member"><img src="img/tv5.jpg"><div class="info"><h3>Trần Nam Phong</h3><p>Kỹ thuật</p><p>Email: e@gmail.com</p><p>SĐT: 0933 444 555</p></div></div>
+    <div class="member"><img src="img/tv6.jpg"><div class="info"><h3>Nguyễn Minh Trí</h3><p>Hậu cần</p><p>Email: f@gmail.com</p><p>SĐT: 0966 777 888</p></div></div>
+    <div class="member"><img src="img/tv7.jpg"><div class="info"><h3>Vũ Đức Việt</h3><p>Quản lý</p><p>Email: g@gmail.com</p><p>SĐT: 0901 222 333</p></div></div>
+    <div class="member"><img src="img/tv8.jpg"><div class="info"><h3>Đặng Kim Ngân</h3><p>Truyền thông</p><p>Email: h@gmail.com</p><p>SĐT: 0910 333 444</p></div></div>
+    <div class="member"><img src="img/tv9.jpg"><div class="info"><h3>Phùng Ngọc Tuấn Tú</h3><p>Nhiếp ảnh</p><p>Email: cattertu310308@gmail.com</p><p>SĐT: 0865 831 308</p></div></div>
+    <div class="member"><img src="img/tv10.jpg"><div class="info"><h3>Đoàn Nguyễn Thuỳ Trang</h3><p>Hỗ trợ</p><p>Email: k@gmail.com</p><p>SĐT: 0930 999 111</p></div></div>
+
+</div>
+
+<footer>
+    © 2025 - Ngoc Dao's Group | Thiết kế bởi @Catter
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<script>
     const cards = document.querySelectorAll(".member");
     const overlay = document.getElementById("overlay");
 
@@ -273,6 +206,7 @@
     overlay.addEventListener("click", () => {
         overlay.classList.remove("active");
     });
-</script>   
- </body>
+</script>
+
+</body>
 </html>
