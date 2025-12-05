@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-   
     <style>
         body {
             margin: 0;
@@ -18,6 +17,18 @@
             object-fit: cover;
         }
 
+        #continueBtn {
+            position: absolute;
+            padding: 15px 30px;
+            font-size: 22px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            cursor: pointer;
+            display: none;
+            z-index: 10;
+        }
+
         .fade-out {
             animation: fadeOut 1s forwards;
         }
@@ -32,21 +43,42 @@
 
 <body>
 
-    
+    <!-- Video intro đầu -->
     <video id="introVideo" autoplay muted playsinline>
         <source src="video/intro.mp4" type="video/mp4">
-        
     </video>
 
-    <script>
-        const video = document.getElementById("introVideo");
+    <!-- Video intro 2 (ẩn ban đầu) -->
+    <video id="introVideo2" style="display:none;" playsinline>
+        <source src="video/intro2.mp4" type="video/mp4">
+    </video>
 
-        
-        video.onended = () => {
-            video.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, 1000);
+    <!-- Nút bấm -->
+    <button id="continueBtn">Bấm để tiếp tục</button>
+
+
+    <script>
+        const video1 = document.getElementById("introVideo");
+        const video2 = document.getElementById("introVideo2");
+        const btn = document.getElementById("continueBtn");
+
+        // Khi video 1 kết thúc → hiện nút
+        video1.onended = () => {
+            btn.style.display = "block";
+        };
+
+        // Khi nhấn nút → phát video 2 (có tiếng)
+        btn.onclick = () => {
+            btn.style.display = "none";              // Ẩn nút
+            video1.style.display = "none";           // Ẩn video 1
+            video2.style.display = "block";          // Hiện video 2
+            video2.muted = false;                    // Bật âm thanh
+            video2.play();                           // Phát video 2
+        };
+
+        // Sau khi video 2 phát xong → chuyển trang
+        video2.onended = () => {
+            window.location.href = "index.html";
         };
     </script>
 
