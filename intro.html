@@ -32,7 +32,7 @@
 
 <body>
 
-    <!-- ✅ VIDEO INTRO -->
+    
     <video id="introVideo" autoplay muted playsinline>
         <source src="video/intro.mp4" type="video/mp4">
         Trình duyệt không hỗ trợ video.
@@ -41,7 +41,7 @@
     <script>
         const video = document.getElementById("introVideo");
 
-        // Khi video kết thúc → Fade out → sang index.html
+        
         video.onended = () => {
             video.classList.add("fade-out");
             setTimeout(() => {
