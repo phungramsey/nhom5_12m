@@ -27,7 +27,7 @@
             letter-spacing: 1px;
         }
 
-        /* VIDEO 16:9 + hiệu ứng thu nhỏ khi cuộn */
+        
         .video-wrapper {
             width: 100%;
             max-width: 1000px;
@@ -50,7 +50,7 @@
        
         
 
-        /* GRID THÀNH VIÊN */
+        
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -109,7 +109,7 @@
             color: #1976d2;
         }
 
-        /* CARD THỨ 10 RA GIỮA */
+        
         .member:nth-child(10) {
             grid-column: 2 / 3;
         }
@@ -123,7 +123,7 @@
             font-size: 14px;
         }
 
-        /* OVERLAY PHÓNG TO */
+        
         .overlay {
             position: fixed;
             top: 0;
@@ -172,7 +172,7 @@
             }
         }
 
-        /* Responsive */
+        
         @media (max-width: 900px) {
             .container {
                 grid-template-columns: repeat(2, 1fr);
@@ -195,7 +195,7 @@
 
 <h1>GIỚI THIỆU THÀNH VIÊN NHÓM 4 LỚP 12M</h1>
 
-<!-- VIDEO intro2.mp4 -->
+
 <div class="video-wrapper" id="videoBox">
     <video controls>
         <source src="video/intro2.mp4" type="video/mp4">
@@ -222,7 +222,7 @@
 <div class="overlay" id="overlay"></div>
 
 <script>
-    /* Phóng to thẻ thành viên */
+    
     const cards = document.querySelectorAll(".member");
     const overlay = document.getElementById("overlay");
 
