@@ -81,10 +81,7 @@
 
 <script>
 function loginFake() {
-    // ✅ Ghi trạng thái đã đăng nhập
     sessionStorage.setItem("loggedIn", "true");
-
-    // ✅ Chuyển hướng sang trang chính
     window.location.href = "intro.html";
 
     return false; // Không reload trang
