@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Video Intro</title>
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
         body {
             margin: 0;
@@ -18,11 +18,28 @@
         }
 
         video {
-            position: absolute;
             width: 100vw;
             height: 100vh;
             object-fit: cover;
-            background: black;
+        }
+
+        /* ✅ DẠNG YOUTUBE KHI DỌC */
+        @media only screen and (orientation: portrait) {
+            video {
+                width: 100vw;
+                height: auto;
+                max-height: 56.25vw; /* 16:9 */
+                object-fit: contain;
+            }
+        }
+
+        /* ✅ FULL KHI XOAY NGANG */
+        @media only screen and (orientation: landscape) {
+            video {
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+            }
         }
 
         #continueBtn {
@@ -30,15 +47,16 @@
             padding: 15px 30px;
             font-size: 26px;
             border: none;
-            background: #8B0000;
-            color: white;
+            background: #8B0000; 
+            color: white;         
             border-radius: 10px;
             cursor: pointer;
             display: none;
             z-index: 10;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            font-weight: 700;
+
+            font-family: 'Montserrat', sans-serif; 
+            text-transform: uppercase;             
+            font-weight: 700;                      
         }
 
         .fade-out {
@@ -48,27 +66,6 @@
         @keyframes fadeOut {
             to { opacity: 0; }
         }
-
-        /* ✅ ĐIỆN THOẠI DỌC → XOAY VIDEO NGANG */
-        @media only screen and (orientation: portrait) {
-            video {
-                width: 100vh;
-                height: 100vw;
-                transform: rotate(90deg);
-                object-fit: contain;
-            }
-        }
-
-        /* ✅ XOAY NGANG → FULL MÀN HÌNH */
-        @media only screen and (orientation: landscape) {
-            video {
-                width: 100vw;
-                height: 100vh;
-                transform: rotate(0deg);
-                object-fit: cover;
-            }
-        }
-
     </style>
 </head>
 
@@ -89,12 +86,17 @@
         const video2 = document.getElementById("introVideo2");
         const btn = document.getElementById("continueBtn");
 
-        /* ✅ Bắt buộc cho iPhone được autoplay */
+        let introEnded = false; // ✅ CHỐT KHÓA, KHÔNG HIỆN NÚT 2 LẦN
+
+        // ✅ Bật autoplay cho iPhone
         window.addEventListener("touchstart", () => {
             video1.play();
         }, { once: true });
 
         video1.onended = () => {
+            if (introEnded) return;   // ✅ NGĂN HIỆN LẠI LẦN 2
+            introEnded = true;
+
             video1.classList.add("fade-out");
             setTimeout(() => {
                 btn.style.display = "block";
