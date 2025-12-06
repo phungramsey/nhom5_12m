@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Video Intro</title>
-    
-   
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             margin: 0;
@@ -19,27 +18,27 @@
         }
 
         video {
+            position: absolute;
             width: 100vw;
             height: 100vh;
             object-fit: cover;
+            background: black;
         }
 
-        
         #continueBtn {
             position: absolute;
             padding: 15px 30px;
             font-size: 26px;
             border: none;
-            background: #8B0000; 
-            color: white;         
+            background: #8B0000;
+            color: white;
             border-radius: 10px;
             cursor: pointer;
             display: none;
             z-index: 10;
-
-            font-family: 'Montserrat', sans-serif; 
-            text-transform: uppercase;             
-            font-weight: 700;                      
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .fade-out {
@@ -47,10 +46,29 @@
         }
 
         @keyframes fadeOut {
-            to {
-                opacity: 0;
+            to { opacity: 0; }
+        }
+
+        /* ✅ ĐIỆN THOẠI DỌC → XOAY VIDEO NGANG */
+        @media only screen and (orientation: portrait) {
+            video {
+                width: 100vh;
+                height: 100vw;
+                transform: rotate(90deg);
+                object-fit: contain;
             }
         }
+
+        /* ✅ XOAY NGANG → FULL MÀN HÌNH */
+        @media only screen and (orientation: landscape) {
+            video {
+                width: 100vw;
+                height: 100vh;
+                transform: rotate(0deg);
+                object-fit: cover;
+            }
+        }
+
     </style>
 </head>
 
@@ -71,7 +89,11 @@
         const video2 = document.getElementById("introVideo2");
         const btn = document.getElementById("continueBtn");
 
-        
+        /* ✅ Bắt buộc cho iPhone được autoplay */
+        window.addEventListener("touchstart", () => {
+            video1.play();
+        }, { once: true });
+
         video1.onended = () => {
             video1.classList.add("fade-out");
             setTimeout(() => {
@@ -79,7 +101,6 @@
             }, 1200);
         };
 
-        
         btn.onclick = () => {
             btn.style.display = "none";
             video1.style.display = "none";
@@ -88,7 +109,6 @@
             video2.play();
         };
 
-        
         video2.onended = () => {
             window.location.href = "index.html";
         };
