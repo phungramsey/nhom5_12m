@@ -23,7 +23,7 @@
             object-fit: cover;
         }
 
-        /* ✅ DẠNG YOUTUBE KHI DỌC */
+        
         @media only screen and (orientation: portrait) {
             video {
                 width: 100vw;
@@ -33,7 +33,7 @@
             }
         }
 
-        /* ✅ FULL KHI XOAY NGANG */
+        
         @media only screen and (orientation: landscape) {
             video {
                 width: 100vw;
@@ -86,15 +86,15 @@
         const video2 = document.getElementById("introVideo2");
         const btn = document.getElementById("continueBtn");
 
-        let introEnded = false; // ✅ CHỐT KHÓA, KHÔNG HIỆN NÚT 2 LẦN
+        let introEnded = false; 
 
-        // ✅ Bật autoplay cho iPhone
+        
         window.addEventListener("touchstart", () => {
             video1.play();
         }, { once: true });
 
         video1.onended = () => {
-            if (introEnded) return;   // ✅ NGĂN HIỆN LẠI LẦN 2
+            if (introEnded) return;   
             introEnded = true;
 
             video1.classList.add("fade-out");
