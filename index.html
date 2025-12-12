@@ -2,6 +2,13 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+
+    <script> 
+        if (sessionStorage.getItem("loggedIn") !== "true") 
+        { window.location.href = "login.html"; } 
+    
+    </script>
+    
     <title>Giới thiệu thành viên nhóm</title>
 
     <style>
@@ -81,7 +88,7 @@
             font-size: 14px;
         }
 
-        /* ====== POPUP OVERLAY ====== */
+        /* ====== POPUP ====== */
         .overlay {
             position: fixed;
             top: 0;
@@ -127,10 +134,6 @@
             font-size: 20px;
         }
 
-        .zoom-content ul {
-            margin-bottom: 18px;
-        }
-
         @keyframes zoomIn {
             from {
                 transform: scale(0.6);
@@ -142,7 +145,6 @@
             }
         }
 
-        /* Mobile responsive */
         @media (max-width: 900px) {
             .container {
                 grid-template-columns: repeat(2, 1fr);
@@ -160,25 +162,17 @@
 
 <h1>GIỚI THIỆU THÀNH VIÊN NHÓM 5 LỚP 12M</h1>
 
-<!-- ======= DANH SÁCH THÀNH VIÊN ======= -->
 <div class="container">
 
-    <!-- MEMBER 1 -->
+    <!-- 1 -->
     <div class="member"
          data-extra="
-            <h2>Kinh nghiệm</h2>
-            <ul>
-                <li>Trưởng nhóm dự án lớp 12M</li>
-                <li>Quản lý tiến độ – phân chia công việc</li>
-            </ul>
-            <h2>Kỹ năng</h2>
-            <ul>
-                <li>Kỹ năng lãnh đạo</li>
-                <li>Giao tiếp tốt</li>
-            </ul>
-         "
-    >
-        <img src="img/tv1.jpg">
+             <h2>Kinh nghiệm</h2>
+             <ul><li>Trưởng nhóm - quản lý công việc</li></ul>
+             <h2>Kỹ năng</h2>
+             <ul><li>Lãnh đạo, giao tiếp</li></ul>
+         ">
+        <img src='img/tv1.jpg'>
         <div class="info">
             <h3>Đào Gia Bảo Ngọc</h3>
             <p>Trưởng nhóm</p>
@@ -187,17 +181,13 @@
         </div>
     </div>
 
-    <!-- MEMBER 2 -->
+    <!-- 2 -->
     <div class="member"
          data-extra="
-            <h2>Thành tích</h2>
-            <ul>
-                <li>Hỗ trợ quản lý nhóm</li>
-                <li>Chịu trách nhiệm tổ chức nội dung</li>
-            </ul>
-         "
-    >
-        <img src="img/tv2.jpg">
+            <h2>Nhiệm vụ</h2>
+            <ul><li>Hỗ trợ trưởng nhóm</li></ul>
+         ">
+        <img src='img/tv2.jpg'>
         <div class="info">
             <h3>Bùi Mạnh Trường</h3>
             <p>Phó nhóm</p>
@@ -206,18 +196,17 @@
         </div>
     </div>
 
-    <!-- MEMBER 3 -->
+    <!-- 3 -->
     <div class="member"
          data-extra="
-            <h2>Nhiếp ảnh – Thiết kế</h2>
+            <h2>Chuyên môn</h2>
             <ul>
-                <li>Chụp ảnh – dựng video</li>
-                <li>Chỉnh sửa poster & banner</li>
+                <li>Nhiếp ảnh, quay dựng video</li>
+                <li>Thiết kế poster</li>
             </ul>
-            <i>“im lặng, làm và gáy”</i>
-         "
-    >
-        <img src="img/tv9.jpg">
+            <i>'im lặng, làm và gáy'</i>
+         ">
+        <img src='img/tv9.jpg'>
         <div class="info">
             <h3>Phùng Ngọc Tuấn Tú</h3>
             <p>Nhiếp ảnh & Thiết kế</p>
@@ -226,14 +215,99 @@
         </div>
     </div>
 
-    <!-- Thêm các member khác… -->
+    <!-- 4 -->
+    <div class="member"
+         data-extra="<h2>Vai trò</h2><p>Ghi chép, tổng hợp nội dung nhóm</p>">
+        <img src='img/tv8.jpg'>
+        <div class="info">
+            <h3>Đặng Kim Ngân</h3>
+            <p>Thư kí</p>
+            <p>Email: ngandk1408@gmail.com</p>
+            <p>SĐT: 0865 960 214</p>
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="member"
+         data-extra="<h2>Ghi chú</h2><p>Thành viên tích cực</p>">
+        <img src='img/tv3.jpg'>
+        <div class="info">
+            <h3>Phan Thị Phương Thuỷ</h3>
+            <p>Thành viên</p>
+            <p>Email: phanthuy08@gmail.com</p>
+            <p>SĐT: 0904 225 281</p>
+        </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="member"
+         data-extra="<h2>Ghi chú</h2><p>Hỗ trợ công việc nhóm</p>">
+        <img src='img/tv4.jpg'>
+        <div class="info">
+            <h3>Nguyễn Kim Ngân</h3>
+            <p>Thành viên</p>
+            <p>Email: nguyenkimngan2008@gmail.com</p>
+            <p>SĐT: 0989 247 529</p>
+        </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="member"
+         data-extra="<h2>Hoạt động</h2><p>Hỗ trợ quay chụp</p>">
+        <img src='img/tv5.jpg'>
+        <div class="info">
+            <h3>Trần Nam Phong</h3>
+            <p>Thành viên</p>
+            <p>Email: phongtran21052008@gmail.com</p>
+            <p>SĐT: 0705 718 868</p>
+        </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="member"
+         data-extra="<h2>Hoạt động</h2><p>Tham gia đầy đủ, tích cực</p>">
+        <img src='img/tv6.jpg'>
+        <div class="info">
+            <h3>Nguyễn Minh Trí</h3>
+            <p>Thành viên</p>
+            <p>Email: minhtring2008@gmail.com</p>
+            <p>SĐT: 0969 251 751</p>
+        </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="member"
+         data-extra="<h2>Vai trò</h2><p>Hỗ trợ tổ chức hoạt động</p>">
+        <img src='img/tv7.jpg'>
+        <div class="info">
+            <h3>Vũ Đức Việt</h3>
+            <p>Thành viên</p>
+            <p>Email: vuviet041008@gmail.com</p>
+            <p>SĐT: 0966 101 527</p>
+        </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="member"
+         data-extra="<h2>Ghi chú</h2><p>Thành viên năng động</p>">
+        <img src='img/tv10.jpg'>
+        <div class="info">
+            <h3>Đoàn Nguyễn Thuỳ Trang</h3>
+            <p>Thành viên</p>
+            <p>Email: trang156hd@gmail.com</p>
+            <p>SĐT: 0989 019 208</p>
+        </div>
+    </div>
+
 </div>
+
 
 <footer>
     © 2025 - Ngoc Dao's Group | Thiết kế bởi @Catter
 </footer>
 
-<!-- ===== POPUP OVERLAY ===== -->
+
+<!-- ========== POPUP ========== -->
 <div class="overlay" id="overlay"></div>
 
 <script>
