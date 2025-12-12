@@ -2,12 +2,13 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+
     <script>
         if (sessionStorage.getItem("loggedIn") !== "true") {
             window.location.href = "login.html";
         }
     </script>
-
+    
     <title>Giới thiệu thành viên nhóm</title>
 
     <style>
@@ -205,7 +206,8 @@
             from { transform: scale(0.6); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
-        
+
+        /* Căn giữa card cuối cùng trên màn hình lớn */
         @media (min-width: 901px) {
             .member:last-child {
                 grid-column: 2 / 3;
@@ -217,7 +219,6 @@
                 grid-column: auto;
             }
         }
-    
     </style>
 </head>
 
@@ -238,16 +239,16 @@
         <th>Nhiệm vụ</th>
         <th>Trạng thái công việc</th>
     </tr>
-    <tr><td>Đào Gia Bảo Ngọc</td><td>Điều phối & quản lý</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Bùi Mạnh Trường</td><td>Hỗ trợ điều hành</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Phùng Ngọc Tuấn Tú</td><td>Chụp ảnh, edit video, thiết kế</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Đặng Kim Ngân</td><td>Tổng hợp & ghi chép</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Phan Thị Phương Thuỷ</td><td>Chuẩn bị nội dung</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Nguyễn Kim Ngân</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Trần Nam Phong</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Nguyễn Minh Trí</td><td>Phát triển nội dung</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Vũ Đức Việt</td><td>Hỗ trợ phát triển nội dung</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Đoàn Nguyễn Thuỳ Trang</td><td>Lên ý tưởng</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Đào Gia Bảo Ngọc</td><td>Trưởng nhóm</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Bùi Mạnh Trường</td><td>Phó nhóm</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Phùng Ngọc Tuấn Tú</td><td>Nhiếp ảnh & Thiết kế</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Đặng Kim Ngân</td><td>Thư kí</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Phan Thị Phương Thuỷ</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Nguyễn Kim Ngân</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Trần Nam Phong</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Nguyễn Minh Trí</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Vũ Đức Việt</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Đoàn Nguyễn Thuỳ Trang</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
 </table>
 
 <!-- CARD THÀNH VIÊN -->
@@ -291,43 +292,43 @@ const extraInfo = {
     },
     "Phùng Ngọc Tuấn Tú": {
         hobby: "Chụp ảnh, edit video, thiết kế",
-        subject: "Tiếng Anh",
+        subject: "Tin học",
         task: "Nhiếp ảnh, quay dựng và thiết kế"
     },
     "Đặng Kim Ngân": {
         hobby: "Viết nhật ký, soạn thảo",
-        subject: "Ngữ Văn",
+        subject: "Văn",
         task: "Thư ký, tổng hợp & ghi chép"
     },
     "Phan Thị Phương Thuỷ": {
         hobby: "Xem phim, đọc truyện",
-        subject: "Vật Lý",
+        subject: "Sinh học",
         task: "Hỗ trợ chuẩn bị nội dung"
     },
     "Nguyễn Kim Ngân": {
         hobby: "Nấu ăn, đọc manga",
-        subject: "Hóa Học",
+        subject: "Hóa học",
         task: "Thành viên hỗ trợ"
     },
     "Trần Nam Phong": {
         hobby: "Đá bóng, chơi game",
-        subject: "Tin Học",
+        subject: "Tin học",
         task: "Thành viên hỗ trợ"
     },
     "Nguyễn Minh Trí": {
-        hobby: "Nghe nhạc, chơi game",
-        subject: "Hóa Học",
-        task: "Hỗ trợ phát triển nội dung"
+        hobby: "Nghe nhạc, chụp ảnh",
+        subject: "Sinh học",
+        task: "Hỗ trợ quay dựng & nội dung"
     },
     "Vũ Đức Việt": {
-        hobby: "Thể thao, đọc sách",
+        hobby: "Thể thao, đọc báo",
         subject: "Toán",
         task: "Thành viên hỗ trợ"
     },
     "Đoàn Nguyễn Thuỳ Trang": {
-        hobby: "Ngủ",
-        subject: "Toán",
-        task: "Hỗ trợ lên ý tưởng"
+        hobby: "Vẽ tranh, chụp ảnh",
+        subject: "Mỹ thuật",
+        task: "Hỗ trợ thiết kế & nội dung"
     }
 };
 
