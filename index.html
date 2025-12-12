@@ -205,6 +205,19 @@
             from { transform: scale(0.6); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
+        
+        @media (min-width: 901px) {
+            .member:last-child {
+                grid-column: 2 / 3;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .member:last-child {
+                grid-column: auto;
+            }
+        }
+    
     </style>
 </head>
 
