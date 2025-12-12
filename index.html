@@ -157,7 +157,7 @@
             display: flex;
         }
 
-        /* POPUP NGANG */
+       
         .zoom-card {
             width: 850px;
             background: white;
@@ -207,7 +207,7 @@
             to { transform: scale(1); opacity: 1; }
         }
 
-        /* Căn giữa card cuối cùng trên màn hình lớn */
+        
         @media (min-width: 901px) {
             .member:last-child {
                 grid-column: 2 / 3;
@@ -232,26 +232,26 @@
     </video>
 </div>
 
-<!-- BẢNG -->
+
 <table>
     <tr>
         <th>Họ và tên</th>
         <th>Nhiệm vụ</th>
         <th>Trạng thái công việc</th>
     </tr>
-    <tr><td>Đào Gia Bảo Ngọc</td><td>Trưởng nhóm</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Bùi Mạnh Trường</td><td>Phó nhóm</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Phùng Ngọc Tuấn Tú</td><td>Nhiếp ảnh & Thiết kế</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Đặng Kim Ngân</td><td>Thư kí</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Phan Thị Phương Thuỷ</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Nguyễn Kim Ngân</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Trần Nam Phong</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Nguyễn Minh Trí</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Vũ Đức Việt</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
-    <tr><td>Đoàn Nguyễn Thuỳ Trang</td><td>Thành viên</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Đào Gia Bảo Ngọc</td><td>Điều phối & quản lý</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Bùi Mạnh Trường</td><td>Hỗ trợ điều hành</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Phùng Ngọc Tuấn Tú</td><td>Chụp ảnh, edit video, thiết kế</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Đặng Kim Ngân</td><td>Tổng hợp & ghi chép</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Phan Thị Phương Thuỷ</td><td>Hỗ trợ chuẩn bị nội dung</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Nguyễn Kim Ngân</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Trần Nam Phong</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Nguyễn Minh Trí</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Vũ Đức Việt</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
+    <tr><td>Đoàn Nguyễn Thuỳ Trang</td><td>Hỗ trợ tổng hợp thông tin</td><td>Hoàn thành tốt</td></tr>
 </table>
 
-<!-- CARD THÀNH VIÊN -->
+
 <div class="container">
 
     <div class="member"><img src="img/tv1.jpg"><div class="info"><h3>Đào Gia Bảo Ngọc</h3><p>Trưởng nhóm</p><p>Email: daogiabaongochd2008@gmail.com</p><p>SĐT: 0349 794 188</p></div></div>
@@ -282,7 +282,7 @@ const overlay = document.getElementById("overlay");
 const extraInfo = {
     "Đào Gia Bảo Ngọc": {
         hobby: "Đọc sách, lãnh đạo nhóm",
-        subject: "Ngữ văn",
+        subject: "Ngữ Văn",
         task: "Điều phối & quản lý toàn bộ nhóm"
     },
     "Bùi Mạnh Trường": {
@@ -292,32 +292,32 @@ const extraInfo = {
     },
     "Phùng Ngọc Tuấn Tú": {
         hobby: "Chụp ảnh, edit video, thiết kế",
-        subject: "Tin học",
+        subject: "Tiếng Anh",
         task: "Nhiếp ảnh, quay dựng và thiết kế"
     },
     "Đặng Kim Ngân": {
         hobby: "Viết nhật ký, soạn thảo",
-        subject: "Văn",
+        subject: "Ngữ Văn",
         task: "Thư ký, tổng hợp & ghi chép"
     },
     "Phan Thị Phương Thuỷ": {
         hobby: "Xem phim, đọc truyện",
-        subject: "Sinh học",
+        subject: "Sinh Học",
         task: "Hỗ trợ chuẩn bị nội dung"
     },
     "Nguyễn Kim Ngân": {
         hobby: "Nấu ăn, đọc manga",
-        subject: "Hóa học",
+        subject: "Hóa Học",
         task: "Thành viên hỗ trợ"
     },
     "Trần Nam Phong": {
         hobby: "Đá bóng, chơi game",
-        subject: "Tin học",
+        subject: "Tin Học",
         task: "Thành viên hỗ trợ"
     },
     "Nguyễn Minh Trí": {
         hobby: "Nghe nhạc, chụp ảnh",
-        subject: "Sinh học",
+        subject: "Hóa học",
         task: "Hỗ trợ quay dựng & nội dung"
     },
     "Vũ Đức Việt": {
@@ -326,9 +326,9 @@ const extraInfo = {
         task: "Thành viên hỗ trợ"
     },
     "Đoàn Nguyễn Thuỳ Trang": {
-        hobby: "Vẽ tranh, chụp ảnh",
-        subject: "Mỹ thuật",
-        task: "Hỗ trợ thiết kế & nội dung"
+        hobby: "Ngủ",
+        subject: "Toán",
+        task: "Hỗ trợ tổng hợp nội dung"
     }
 };
 
