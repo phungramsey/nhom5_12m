@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
     <script>
         if (sessionStorage.getItem("loggedIn") !== "true") {
             window.location.href = "login.html";
@@ -131,6 +133,34 @@
             color: #1976d2;
         }
 
+        /* CSS Mới thêm cho nút tham gia */
+        .join-container {
+            text-align: center;
+            margin: 60px 0 20px 0;
+        }
+
+        .btn-join {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+            /* Dùng màu gradient cam-hồng để nổi bật, hoặc đổi lại xanh */
+            background: linear-gradient(90deg, #FF512F 0%, #DD2476 100%); 
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(221, 36, 118, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .btn-join:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(221, 36, 118, 0.5);
+        }
+        /* Kết thúc CSS mới */
+
         footer {
             text-align: center;
             padding: 22px;
@@ -157,7 +187,7 @@
             display: flex;
         }
 
-       
+        
         .zoom-card {
             width: 850px;
             background: white;
@@ -256,7 +286,7 @@
 
     <div class="member"><img src="img/tv1.jpg"><div class="info"><h3>Đào Gia Bảo Ngọc</h3><p>Trưởng nhóm</p><p>daogiabaongochd2008@gmail.com</p><p>0349 794 188</p></div></div>
     <div class="member"><img src="img/tv2.jpg"><div class="info"><h3>Bùi Mạnh Trường</h3><p>Phó nhóm</p><p>bmt19102008@gmail.com</p><p>0979 981 652</p></div></div>
-    <div class="member"><img src="img/tv9.jpg"><div class="info"><h3>Phùng Ngọc Tuấn Tú</h3><p>Nhiếp ảnh & Thiết kế</p><p>cattertu310308@gmail.com</p><p>SĐT: 0865 831 308</p></div></div>
+    <div class="member"><img src="img/tv9.jpg"><div class="info"><h3>Phùng Ngọc Tuấn Tú</h3><p>Nhiếp ảnh & Thiết kế</p><p>cattertu310308@gmail.com</p><p>0865 831 308</p></div></div>
 
     <div class="member"><img src="img/tv8.jpg"><div class="info"><h3>Đặng Kim Ngân</h3><p>Thư kí</p><p>ngandk1408@gmail.com</p><p>0865 960 214</p></div></div>
     <div class="member"><img src="img/tv3.jpg"><div class="info"><h3>Phan Thị Phương Thuỷ</h3><p>Thành viên</p><p>phanthuy08@gmail.com</p><p>0904 225 281</p></div></div>
@@ -269,6 +299,11 @@
     <div class="member"><img src="img/tv10.jpg"><div class="info"><h3>Đoàn Nguyễn Thuỳ Trang</h3><p>Thành viên</p><p>trang156hd@gmail.com</p><p>0989 019 208</p></div></div>
 </div>
 
+<div class="join-container">
+    <a href="https://forms.gle/DXWGjzK1KWgcgkeR6" target="_blank" class="btn-join">
+        THAM GIA CÙNG CHÚNG TỚ
+    </a>
+</div>
 <footer>
     © 2025 - Ngoc Dao's Group | Thiết kế bởi @Catter
 </footer>
